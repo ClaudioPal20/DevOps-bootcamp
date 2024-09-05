@@ -20,3 +20,18 @@ jobs:
                   echo "Hello world" >> newfile.yaml
                   cat newfile.yaml
                   pwd
+    mysecondjob:
+              needs: [myfirstjob]
+              name: second job
+              runs-on: macos-latest
+              steps: 
+              - name: Step 1
+                run: date
+
+    mythirdjob:
+              name: third job
+              runs-on: windows-latest
+              steps: 
+              - name: Step 1
+                run: date
+                
